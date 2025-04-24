@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Document Assistant
 
-## Getting Started
+An intelligent document processing application that can parse PDF and text files, extract their content, and provide AI-powered improvements to make the text more clear, concise, and professional.
 
-First, run the development server:
+## Features
+
+- 📄 PDF and Text File Support
+- 🔍 OCR-powered PDF Text Extraction
+- ✨ AI-powered Text Enhancement
+- 👀 Side-by-side Document Comparison
+- 💡 Interactive Suggestions Panel
+- 🎨 Modern, Responsive UI with Shadcn/ui
+
+## Tech Stack
+
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Zustand (State Management)
+- Shadcn/ui Components
+- OCR.space API
+- OpenRouter AI API
+
+## Prerequisites
+
+Before you begin, ensure you have:
+
+- Node.js 18+ installed
+- npm or yarn package manager
+- Required API keys (see Environment Variables section)
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd assignment
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn
+```
+
+3. Set up environment variables (see next section)
+
+4. Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env.local` file in the root directory with the following variables:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+# OCR.space API key for PDF processing
+OCR_SPACE_API_KEY=your_ocr_space_api_key
 
-## Learn More
+# OpenRouter API key for AI text enhancement
+OPENROUTER_API_KEY=your_openrouter_api_key
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Getting the API Keys
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **OCR.space API Key:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   - Sign up at [OCR.space](https://ocr.space/ocrapi)
+   - Get your free API key from the dashboard
+   - Free tier includes 25,000 requests per month
 
-## Deploy on Vercel
+2. **OpenRouter API Key:**
+   - Visit [OpenRouter](https://openrouter.ai/)
+   - Create an account and get your API key
+   - Supports multiple AI models including Microsoft's MAI-DS-R1
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Upload a document using the drag-and-drop interface or file picker
+2. The application will automatically:
+   - Extract text from PDFs using OCR
+   - Process text files directly
+   - Generate AI-powered improvements
+3. View the original and improved versions side by side
+4. Accept or reject suggested improvements
+5. Copy the final improved text
+
+## Project Structure
+
+- `/src/app/api/*` - API routes for PDF processing and text enhancement
+- `/src/components/*` - React components including the UI components
+- `/src/store/*` - State management using Zustand
+- `/src/lib/*` - Utility functions and helpers
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details
